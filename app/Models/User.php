@@ -43,4 +43,11 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    //Mutator
+    public function setDateAttribute($value)
+    {
+        $this->attributes['email'] = strtolower($value);
+    }
+
+
 }
